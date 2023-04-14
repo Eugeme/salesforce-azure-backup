@@ -10,9 +10,8 @@ def connect():
 
     config = dotenv_values('.env')  # take environment variables from .env file
 
-    # get salesforce credentials from .env
-    username = config['USERNAME']
-    password = config['PASSWORD']
+    username = config['SF_USERNAME']
+    password = config['SF_PASSWORD']
     security_token = config['TOKEN']
     instance = config['INSTANCE']
     domain = config['DOMAIN']

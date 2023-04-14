@@ -11,10 +11,14 @@ def connect():
 
     config = dotenv_values(".env")  # take environment variables from .env file
 
-    cnxn = pyodbc.connect(driver='{ODBC Driver 18 for SQL Server}',
-                          server=config['SERVER'],
-                          database=config['DATABASE'],
-                          uid=config['USERNAME'],
-                          pwd=config['PASSWORD'])
+    server = config['SERVER']
+    database = config['DATABASE']
+    username = config['AZURE_USERNAME']
+    password = config['AZURE_PASSWORD']
 
+    cnxn = pyodbc.connect(driver='{ODBC Driver 18 for SQL Server}',
+                          server=server,
+                          database=database,
+                          uid=username,
+                          pwd=password)
     return cnxn.cursor()
