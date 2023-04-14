@@ -21,5 +21,5 @@ def connect():
                     security_token=security_token,
                     instance=instance,
                     domain=domain,
-                    client_id='Python script')   # track where your API calls come from by adding client_id
+                    client_id='Backup script')   # track where your API calls come from by adding client_id
     return sf
