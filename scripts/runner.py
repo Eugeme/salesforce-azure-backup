@@ -18,7 +18,7 @@ for table_name in table_names:
         missing_ids = missing_records.find_missing_ids(salesforce_ids, azure_ids)
 
     except exceptions.SalesforceMalformedRequest as e:
-        print(e)
+        print('sObject type is not supported')
         continue
 
     except pyodbc.ProgrammingError as e:
